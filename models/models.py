@@ -1,15 +1,17 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+from bitcoinlib import wallets, networks #wallet
 
-# class darfchain(models.Model):
-#     _name = 'darfchain.darfchain'
 
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         self.value2 = float(self.value) / 100
+ class darf_addr (models.Model):
+     _name = 'darfchain.darfchain'
+
+     blockchain_name = fields.Char()
+     blockchain_address = wallets()
+     blockchain_socket = networks()
+     description = fields.Text()
+
+     @api.depends('value')
+     def _value_pc(self):
+         self.value2 = float(self.value) / 100
