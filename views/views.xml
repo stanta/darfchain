@@ -7,9 +7,9 @@
       <field name="model">darfchain.darfchain</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="blockchain_name"/>
+          <field name="blockchain_address"/>
+          <field name="blockchain_socket"/>
         </tree>
       </field>
     </record>
