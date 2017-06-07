@@ -31,3 +31,18 @@ from odoo import http
         while not myToken.status():
             pass
         myAddress.sendAsset(otherAddress, myToken, 50)
+
+    def save_status(self):
+        # get saves changes
+        # archive with encription with password
+        # to save status
+
+    def collect_status(self):
+        #1. get list of objects
+        #2. extract status changes for each
+        #3. make
+
+    def load_changes (self):
+        #1. load transaction form API
+        #2. recompress/decrypt
+        #3. import to odoo
