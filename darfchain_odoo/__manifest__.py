@@ -26,6 +26,10 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        "security/ir.model.access-serp.csv",
+        "wizard/base_synchro_view.xml",
+        "views/base_synchro_view.xml",
+        "views/res_request_view.xml",
     ],
     # only loaded in demonstration mode
     'demo': [
