@@ -9,6 +9,7 @@ import xmlrpclib
 from odoo import models, fields, api
 from odoo.exceptions import Warning
 from odoo.tools.translate import _
+import  controllers.Darfchain
 
 _logger = logging.getLogger(__name__)
 
@@ -57,6 +58,11 @@ class BaseSynchro(models.TransientModel):
     report_total = 0
     report_create = 0
     report_write = 0
+
+    def write (self):
+        # call API's to blockchain
+
+
 
     @api.model
     def input(self, ids, value):
