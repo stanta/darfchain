@@ -13,7 +13,7 @@
 							<field name="import_node"  attrs="{'invisible':[('import_export','=','export')]}"/>
 							<field name="export_privat_key" attrs="{'invisible':[('import_export','=','import')]}"/>
 							<field name="export_asset" attrs="{'invisible':[('import_export','=','import')]}"/>
-							<field name="import_asset" attrs="{'invisible':[('import_export','=','export')]}"/>
+							<field name="import_address" attrs="{'invisible':[('import_export','=','export')]}"/>
 							<field name="privat_key_import" attrs="{'invisible':[('import_export','=','export')]}"/>
 							<field name="import_asset" attrs="{'invisible':[('import_export','=','export')]}"/>
 							<field name="all_models" attrs="{'invisible':[('import_export','=','import')]}"/>
@@ -34,8 +34,11 @@
 	                    <field name="time_period" attrs="{'invisible':[('send_period','!=','Period')]}"/>
 	                    </group>
 						</page>
-						<page string="XML for Synchronization">
-						<field name="xml_for_synchronization"/>
+						<page string="XML for Synchronization" attrs="{'invisible':[('import_export','=','import')]}">
+						<field name="xml_for_synchronization" />
+						</page>
+						<page string="Import Data" attrs="{'invisible':[('import_export','=','export')]}">
+						<field name="import_synchronization"/>
 						</page>
 						</notebook>
 					</sheet>
