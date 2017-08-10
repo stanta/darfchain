@@ -15,7 +15,7 @@ services:
       - DEBUG=1
   odoo:
     build:
-      context: ./odoo_main
+      context: ./odoo
       dockerfile: Dockerfile
     depends_on:
       - db

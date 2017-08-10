@@ -36,7 +36,8 @@ RUN set -x; \
             python-qt4 \
             python-qt4-gl \
             libgle3 \
-            python-dev\
+            python-dev \
+            python3-dev \ 
             libffi-dev \
             libssl-dev \
         && curl -o wkhtmltox.deb -SL http://nightly.odoo.com/extra/wkhtmltox-0.12.1.2_linux-jessie-amd64.deb \
@@ -50,7 +51,7 @@ RUN set -x; \
         && pip install rethinkdb \ 
         && pip install base58 \
         && pip install pywaves \
-        && pip3 install bigchaindb_driver \
+        && pip3 install bigchaindb_driver
 
 
 # Install Odoo
