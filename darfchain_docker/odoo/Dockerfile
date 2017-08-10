@@ -51,6 +51,7 @@ RUN set -x; \
         && pip install rethinkdb \ 
         && pip install base58 \
         && pip install pywaves \
+        && pip3 install --upgrade setuptools \
         && pip3 install bigchaindb_driver
 
 
