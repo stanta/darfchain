@@ -72,3 +72,11 @@ services:
     ports:
       - "32782:9984"
     command: bigchaindb start
+networks:
+  vpn:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.18.0.0/16
+        gateway 172.18.0.1
