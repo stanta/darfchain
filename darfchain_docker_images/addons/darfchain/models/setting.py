@@ -219,7 +219,7 @@ class SettingConnect(models.Model):
             attachment = result_waves.json()[0][0]['attachment']
             attachment = base58.b58decode(attachment)
             print attachment
-            conn = r.connect('goldsoft.org', 28015).repl()
+            conn = r.connect('172.18.0.1', 28015).repl()
             get_result = r.db('bigchain').table('assets').filter({'data':{"general_info":  attachment}}).run(conn)
             dict_for_record  = {}
             excepted_fields = ['password_crypt','id','create_date','create_uid','__last_update','message_ids','login_date','mail_followers','write_date','message_last_post','validity_date','message_is_follower']
