@@ -8,15 +8,22 @@
 				<form string="Setting BlockChain Synchro">
 					<sheet>
 						<group>
+						    <field name="platforma" />
+						    <field name="ethereum_pk" attrs="{'invisible':[('platforma','=','waves')]}" string="Ethereum contract address"/>
+						    <!-- <field name="ethereum_password" attrs="{'invisible':[('platforma','=','waves')]}"/> -->
+						    <field name="ethereum_address" attrs="{'invisible':[('platforma','=','waves')]}" />
+						    <field name="ethereum_node_address" attrs="{'invisible':[('platforma','=','waves')]}" />
+						    <field name="gas_limit"  attrs="{'invisible':[('platforma','=','waves')]}"/>
+						    <field name="gas_spent"  attrs="{'invisible':[('platforma','=','waves')]}"/>
 						    <field name="import_export"/>
-							<field name="export_node_address" attrs="{'invisible':[('import_export','=','import')]}"/>
-							<field name="import_node"  attrs="{'invisible':[('import_export','=','export')]}"/>
-							<field name="export_privat_key" attrs="{'invisible':[('import_export','=','import')]}"/>
-							<field name="export_asset" attrs="{'invisible':[('import_export','=','import')]}"/>
-							<field name="import_address" attrs="{'invisible':[('import_export','=','export')]}"/>
-							<field name="privat_key_import" attrs="{'invisible':[('import_export','=','export')]}"/>
-							<field name="import_asset" attrs="{'invisible':[('import_export','=','export')]}"/>
-							<field name="all_models" attrs="{'invisible':[('import_export','=','import')]}"/>
+							<field name="export_node_address" attrs="{'invisible':['|',('import_export','=','import'),('platforma','=','ethereum')]}"/>
+							<field name="import_node"  attrs="{'invisible':['|',('import_export','=','import'),('platforma','=','ethereum')]}"/>
+							<field name="export_privat_key" attrs="{'invisible':['|',('import_export','=','import'),('platforma','=','ethereum')]}"/>
+							<field name="export_asset" attrs="{'invisible':['|',('import_export','=','import'),('platforma','=','ethereum')]}"/>
+							<field name="import_address" attrs="{'invisible':['|',('import_export','=','import'),('platforma','=','ethereum')]}"/>
+							<field name="privat_key_import" attrs="{'invisible':['|',('import_export','=','import'),('platforma','=','ethereum')]}"/>
+							<field name="import_asset" attrs="{'invisible':['|',('import_export','=','import'),('platforma','=','ethereum')]}"/>
+							<field name="all_models" attrs="{'invisible':['|',('import_export','=','import'),('platforma','=','ethereum')]}"/>
 							<field name="models" context="{'connect_id': active_id}" attrs="{'invisible':['|',('all_models','=',True),('import_export','=','import')]}">
 							<tree  editable="bottom">
                               <field name="model_id" string="Model"/>							

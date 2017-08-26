@@ -15,7 +15,7 @@ services:
       - DEBUG=1
   odoo:
     build:
-      context: ./odoo
+      context: ./odoo_main
       dockerfile: Dockerfile
     depends_on:
       - db
@@ -25,6 +25,10 @@ services:
       - ./addons:/mnt/extra-addons
     environment:
       - DEBUG=1
+  testrpc:
+    image: desmart/testrpc
+    ports:
+      - "8545:8545"
   db:
     image: postgres:9.4
     environment:
@@ -35,7 +39,7 @@ services:
     image: rethinkdb
     ports:
       - "58080:8080"
-      - "28015"
+      - "28015:28015"
     volumes_from:
       - rdb-data
 
@@ -43,7 +47,7 @@ services:
     image: rethinkdb
     ports:
       - "8080"
-      - "29015"
+      - "29015:29015"
     command: rethinkdb --join rdb:29015 --bind all
 
   rdb-data:
