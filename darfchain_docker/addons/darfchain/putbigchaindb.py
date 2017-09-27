@@ -19,7 +19,7 @@ attachment = str(attachment)
 print(attachment)
 odoo = generate_keypair()
 
-bdb_root_url = 'http://localhost:32782'  
+bdb_root_url = 'http://172.17.0.1:32782'  
 
 bdb = BigchainDB(bdb_root_url)
 json_data = {}

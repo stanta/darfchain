@@ -1,0 +1,1 @@
+r.db('bigchain').table('assets').filter({'data':{"general_info": "2017-08-24 17:49:24.249162_155"}})
