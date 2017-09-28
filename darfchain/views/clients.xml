@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    <!-- form view setting -->
+    <record model="ir.ui.view" id="crypto_partner_form_view">
+    <field name="name">res.partner</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+               <xpath expr="//page[@name='sales_purchases']" position="after">
+               <page name="cryptocurrency" string="Crypto Currencies">
+               <group>
+	               <field name="bitcoin_address" />
+	               <field name="bitcoin_balance" />
+	               <field name="waves_address" />
+	               <field name="waves_balance" />
+	               <field name="ethereum_address"/>
+	               <field name="ethereum_balance"/>
+               </group>               
+               </page>
+               </xpath>
+            </field>
+        </record>
+   </data>
+  </odoo>

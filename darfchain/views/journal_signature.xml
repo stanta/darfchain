@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="journal_signature_form_view">
+			<field name="name">journal.signature</field>
+			<field name="model">journal.signature</field>
+			<field name="arch" type="xml">
+				<form string="Journal signature">
+					<sheet>
+						<group>
+						<field name="name"/>
+                        <field name="hash_of_signature" />
+                        <field name="checksum" />
+                        <field name="timestamp_of_document" />
+                        <field name="date_of_signature" />						
+						
+						
+						    
+						</group>
+					</sheet>
+					
+				</form>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="journal_signature_tree_view">
+			<field name="name">journal.signature</field>
+			<field name="model">journal.signature</field>
+			<field name="arch" type="xml">
+				<tree string="Jornal signature">
+				     <field name="name"/>
+                        <field name="hash_of_signature" />
+                        <field name="checksum" />
+                        <field name="timestamp_of_document" />
+                        <field name="date_of_signature" />						
+						       
+				</tree>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="journal_signature_action">
+			<field name="name">Journal Signature</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">journal.signature</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="darfchain.journal_signature_tree_view" />
+		</record>
+		<menuitem name="Signature Journal" id="journal_signature_page_menu"
+			parent="sales_team.menu_sales" action="journal_signature_action"
+			sequence="22" />
+	</data>
+</odoo>

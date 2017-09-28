@@ -19,6 +19,9 @@
     'data': [
      'views/setting.xml',
      'data/cron.xml',
+     'views/clients.xml',
+     'views/sale_order.xml',
+     'views/journal_signature.xml',
 #     'views/report.xml',
     ],
 }
