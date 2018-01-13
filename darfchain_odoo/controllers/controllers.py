@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import http
 
- class Darfchain(http.Controller):
+class Darfchain(http.Controller):
     @http.route('/darfchain/darfchain/', auth='public')
      def index(self, **kw):
          return "Hello, world"
