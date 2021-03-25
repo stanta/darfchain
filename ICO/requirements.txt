@@ -22,7 +22,7 @@ pyethash==0.1.27
 pylru==1.0.9
 pysha3==1.0.2
 pytest==3.0.7
-PyYAML==3.12
+PyYAML==5.4
 repoze.lru==0.6
 requests==2.13.0
 ruamel.yaml==0.14.5
